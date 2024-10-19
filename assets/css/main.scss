@@ -1,0 +1,249 @@
+--- 
+--- 
+
+/* Define CSS variables for easy theming */
+:root {
+    --bg-color: #2c2f33;
+    --bg-dark: #23272a;
+    --text-color: #ffffff;
+    --text-muted: #b9bbbe;
+    --primary-color: #5865F2;
+    --primary-color-light: #7289da;
+    --accent-color: #7289da;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Base body styling */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Reset unwanted styles */
+* {
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+.discord-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-dark);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+main {
+    padding-top: 80px; /* Adjust this value to the height of your header */
+}
+
+.discord-header .logo a {
+    font-size: 24px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--text-color);
+}
+
+.nav-links li a.active {
+    color: var(--primary-color-light);
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--text-color);
+    padding: 150px 20px 100px;
+    background-image: url('{{ site.baseurl }}/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 47, 51, 0.8);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Content Grid */
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.content-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.text-content h2 {
+    font-size: 2em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.1em;
+    color: var(--text-muted);
+}
+
+.image-content {
+    flex: 1;
+    min-width: 280px;
+    max-width: 200px; /* Adjust this as necessary to change image size */
+    padding: 0; /* Ensure no padding is added */
+    margin: 0; /* Ensure no margin around the image */
+}
+
+/* Button Styles */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-light);
+    box-shadow: 0px 0px 15px rgba(114, 137, 218, 0.5);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: var(--bg-dark);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #99aab5;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .content-block {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content-block.reverse {
+        flex-direction: column;
+    }
+    .text-content, .image-content {
+        flex: unset;
+    }
+    .hero {
+        padding: 120px 20px 80px;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}
+
+.email-popup-footer {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.email-popup-footer p {
+    margin: 0;
+    color: white;
+}

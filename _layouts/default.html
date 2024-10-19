@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <title>{{ page.title | default: site.title }}</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="{{ site.baseurl }}/favicon_io/site.webmanifest">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/papers.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/projects.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/contact.css">
+    
+  <!-- Additional Head Content (Optional) -->
+  {% if page.additional_head %}
+    {{ page.additional_head }}
+  {% endif %}
+</head>
+<body>
+      <!-- Header -->
+    <header class="discord-header">
+        <div class="logo">
+            <a href="{{ '/' | relative_url }}">nickdurbin04</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="https://dev.to/nickdurbin04" target="_blank">Blogs</a></li>
+                <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
+                <li><a href="{{ site.baseurl }}/papers">Papers</a></li>
+                <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <main>
+    <!-- Main Content Area -->
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Nick Durbin</p>
+    <a href="https://www.linkedin.com/in/nickdurbin04" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/nickdurbin04" target="_blank">GitHub</a> |
+    <a href="https://dev.to/nickdurbin04" target="_blank">Dev.to</a> |
+    <a href="javascript:void(0);" onclick="showEmailFooter()">Email</a>
+  
+    <!-- Hidden Email Popup for Footer -->
+    <div id="email-popup-footer" class="email-popup-footer">
+      <p>nickdurbin04@gmail.com</p>
+    </div>
+  </footer>  
+</body>
+</html>
+
+<script>
+    function showEmailFooter() {
+      var emailPopupFooter = document.getElementById('email-popup-footer');
+      emailPopupFooter.style.display = 'block'; // Show the popup
+  
+      // Hide the popup after 3 seconds
+      setTimeout(function() {
+        emailPopupFooter.style.display = 'none';
+      }, 3000);
+    }
+  </script>
+  

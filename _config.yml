@@ -1,0 +1,14 @@
+title: nickdurbin04
+description: A collection of my work, papers I've read, blogs, GitHub projects, and social links.
+baseurl: "/nickdurbin04"
+url: "https://nickdurbin04.github.io"
+sass:
+  style: compressed
+
+author:
+  name: Nick Durbin
+  links:
+    - label: GitHub
+      url: https://github.com/nickdurbin04
+    - label: Dev.to
+      url: https://dev.to/nickdurbin04
